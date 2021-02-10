@@ -46,5 +46,6 @@
     "webpack": "^4.20.2",
     "webpack-cli": "^3.3.10",
     "webpack-extension-reloader": "^1.1.0"
-  }
+  },
+  "version": "0.0.1"
 }
