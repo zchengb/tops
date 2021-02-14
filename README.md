@@ -9,7 +9,7 @@
 - 实时GitHub Trending榜单
 
 ## 安装方法
-可以下载CRX文件手动安装（不建议）：[下载地址](https://github.com/zchengb/tops/releases)
+可以下载CRX文件手动安装：[下载地址](https://github.com/zchengb/tops/releases)
 
 ## 更新记录
 
