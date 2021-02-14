@@ -3,7 +3,6 @@
   "description": "A Vue.js web extension",
   "author": "Hugo Alliaume <kocal@live.fr>",
   "scripts": {
-    "lint": "eslint --ext .js,.vue src",
     "prettier": "prettier \"src/**/*.{js,vue}\"",
     "prettier:write": "npm run prettier -- --write",
     "build": "cross-env NODE_ENV=production webpack --hide-modules",
@@ -20,7 +19,8 @@
   "dependencies": {
     "axios": "^0.19.0",
     "element-ui": "^2.13.2",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-clipboard2": "^0.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",

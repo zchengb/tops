@@ -45,18 +45,23 @@ const config = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader?indentedSyntax'],
       },
       {
-        test: /\.(png|jpg|gif|svg|ico)$/,
+        test: /\.(png|jpg|jpeg|gif|svg|ico)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]?emitFile=false',
+          name: '[path][name].[ext]',
+          outputPath: '/images/',
+          emitFile: true,
+          esModule: false,
         },
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]?emitFile=false',
-          //outputPath: 'fonts/'
+          name: '[path][name].[ext]',
+          outputPath: '/fonts/',
+          emitFile: true,
+          esModule: false,
         },
       },
     ],

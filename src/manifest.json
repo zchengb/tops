@@ -1,6 +1,6 @@
 {
   "name": "Tops",
-  "description": "A Vue.js web extension",
+  "description": "A Top collection web extension",
   "version": null,
   "manifest_version": 2,
   "icons": {
@@ -12,10 +12,18 @@
     "default_popup": "popup/popup.html"
   },
   "background": {
-    "scripts": ["background.js"]
+    "scripts": [
+      "background.js"
+    ]
   },
   "options_ui": {
     "page": "options/options.html",
     "chrome_style": true
-  }
+  },
+  "permissions": [
+    "activeTab",
+    "*://*.sina.com.cn/*",
+    "*://*.weibo.com/*",
+    "*://github.com/*'"
+  ]
 }
