@@ -9,9 +9,7 @@
 - 实时GitHub Trending榜单
 
 ## 安装方法
-**强烈推荐使用 Chrome 商店安装**（这样才能获得自动更新）：[点击跳转至Chrome扩展商店](https://chrome.google.com/webstore/detail/dhdelcemeednchdmijiocipbjlknndff)
-
-若因网络问题，可以下载CRX文件手动安装（不建议）：[下载地址1](https://github.com/x2rr/funds/releases)
+可以下载CRX文件手动安装（不建议）：[下载地址](https://github.com/zchengb/tops/releases)
 
 ## 更新记录
 
