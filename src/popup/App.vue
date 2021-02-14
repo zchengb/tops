@@ -59,7 +59,7 @@
           </p>
           <el-divider content-position="left"><h3>反馈</h3></el-divider>
           <p style="font-weight: normal; line-height: 25px;">
-            &nbsp;&nbsp;&nbsp;&nbsp;本项目已开源至<a>GitHub</a>，如在使用过程中有任何异常或有建议，欢迎通过GitHub提交issue或<a href="mailto:zchengb@163.com">致信邮箱</a>联系作者。
+            &nbsp;&nbsp;&nbsp;&nbsp;本项目已开源至<a href="https://github.com/zchengb/tops" target="_blank">GitHub</a>，如在使用过程中有任何异常或有建议，欢迎通过GitHub提交ISSUE或<a title="zchengb@163.com" href="mailto:zchengb@163.com">致信邮箱</a>联系作者。
           </p>
           <div>
 
@@ -231,7 +231,7 @@ export default {
       if (type === TopType.SINA) {
         this.$copyText("[微博热搜] " + this.sinaTops[idx].title + "\n链接：" + this.sinaTops[idx].url)
       } else if (type === TopType.GITHUB) {
-        this.$copyText("[GitHub Trending] " + this.githubTops[idx].title + "\n链接：" + this.sinaTops[idx].url)
+        this.$copyText("[GitHub Trending] " + this.githubTops[idx].title + "\n链接：" + this.githubTops[idx].url)
       }
       this.$message({message: '分享链接已复制至剪切板😉~', duration: 500, type: 'success'})
     },
