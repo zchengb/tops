@@ -3,16 +3,19 @@
     <el-tabs v-model="activeName" @tab-click="handleClick">
       <el-tab-pane label="微博热搜" name="sina">
         <div class="top-list" v-for="(top,index) in sinaTops" :key=index>
-          {{ top.id }}.&nbsp;&nbsp;<a :href="top.url" target="_blank">{{ top.title }}</a>&nbsp;&nbsp;<el-tag
-            effect="plain" type="info" @click="shareTops(index, 'sina')">热度:{{ top.nums }}
-        </el-tag>
+          <el-row>
+            <el-col :span="18"><span style="color: #409EFF">{{ top.id }}</span>&nbsp;&nbsp;<a :href="top.url" target="_blank">{{ top.title }}</a></el-col>
+            <el-col :span="6">
+              <el-tag id="hot-tag" effect="plain" type="info" @click="shareTops(index, 'sina')">热度:{{ top.nums }}</el-tag>
+            </el-col>
+          </el-row>
         </div>
-        <div v-if="sinaTops.length === 0" style="text-align: center;">加载中...无反应请点击<a
-            href="https://s.weibo.com/top/summary" target="_blank">此处</a>重试
+        <div v-if="sinaTops.length === 0" style="text-align: center;">
+          加载中...无反应请点击<a :href=api_config.sina_base_url target="_blank">此处</a>重试
         </div>
       </el-tab-pane>
       <!-- <el-tab-pane label="知乎热榜" >知乎</el-tab-pane> -->
-      <el-tab-pane label="GitHub Tops" name="github">
+      <el-tab-pane label="GitHub Trending" name="github">
         <div class="top-list">
           <el-select v-model="language" filterable placeholder="请选择语言">
             <el-option
@@ -35,10 +38,13 @@
             <el-collapse-item v-for="(top, index) in githubTops" :key="index" :name="index"
                               :disabled="top.desc === undefined">
               <template slot="title">
-                {{ top.id }}.&nbsp;&nbsp;<a :href="top.url" target="_blank">{{ top.title }}&nbsp;&nbsp;</a>
-                <el-tag effect="plain" type="info" @click="shareTops(index, 'github')"><i
-                    class="el-icon-star-off"></i>&nbsp;{{ top.stars }}
-                </el-tag>
+                <el-row style="width: 100%;">
+                  <el-col :span="19">{{ top.id }}.&nbsp;&nbsp;<a :href="top.url" target="_blank">{{ top.title }}&nbsp;&nbsp;</a></el-col>
+                  <el-col :span="5">
+                    <el-tag effect="plain" type="info" @click="shareTops(index, 'github')"><i class="el-icon-star-off"></i>&nbsp;{{ top.stars }}
+                    </el-tag>
+                  </el-col>
+                </el-row>
               </template>
               <div>
                 {{ top.desc }}
@@ -62,7 +68,6 @@
             &nbsp;&nbsp;&nbsp;&nbsp;本项目已开源至<a href="https://github.com/zchengb/tops" target="_blank">GitHub</a>，如在使用过程中有任何异常或有建议，欢迎通过GitHub提交ISSUE或<a title="zchengb@163.com" href="mailto:zchengb@163.com">致信邮箱</a>联系作者。
           </p>
           <div>
-
           </div>
         </div>
       </el-tab-pane>
@@ -261,6 +266,7 @@ export default {
   height: 40px;
   z-index: 9999;
   color: #01709c;
+  opacity: 0.8;
 }
 
 #search-btn:focus {
@@ -276,6 +282,7 @@ export default {
   color: #01709c;
   border: 1px solid #dcdfe6;
   box-shadow: none;
+  opacity: 0.8;
 }
 
 .el-select {
@@ -284,22 +291,34 @@ export default {
   width: 150px;
 }
 
-.el-tag {
+#hot-tag {
+  font-family: "Microsoft YaHei", "Arial", serif;
+  width: 100px;
   font-size: 10px;
   font-weight: bold;
   cursor: pointer;
+  text-align: center;
+}
+
+.el-tag {
+  font-family: "Microsoft YaHei", "Arial", serif;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
 }
 
 .el-tabs {
-  font-family: "Microsoft YaHei", "Arial", serif;
+  font-family: Noto Sans Marchen,serif;
+  font-style: normal;
+  font-weight: normal;
   font-size: 14px;
-  font-weight: bold;
 }
 
 .el-collapse-item__header {
   font-family: "Microsoft YaHei", "Arial", serif;
   font-size: 14px;
-  font-weight: bold;
+  /*font-weight: bold;*/
   height: 30px;
   white-space: nowrap;
   overflow: hidden;
@@ -312,12 +331,11 @@ export default {
 }
 
 .top-list a {
-  color: #01709c;
+  color: #000;
   text-decoration: none;
 }
 
 .top-list .el-tag {
-  font-size: xx-small;
   color: #7b7b7b;
   border-color: #dadada;
 }

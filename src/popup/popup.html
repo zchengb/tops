@@ -8,7 +8,18 @@
     <!-- Load some resources only in development environment -->
     <% } %>
   </head>
-  <body style="width: 450px; height: 500px;">
+  <style>
+      body {
+          width: 460px;
+          height: 500px;
+          -ms-overflow-style: none;  /* Internet Explorer 10+ */
+          scrollbar-width: none;  /* Firefox */
+      }
+      body::-webkit-scrollbar {
+          display: none;  /* Safari and Chrome */
+      }
+  </style>
+  <body>
     <div id="app"></div>
     <script src="popup.js"></script>
   </body>

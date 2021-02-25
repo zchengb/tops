@@ -9,7 +9,9 @@
 - 实时GitHub Trending榜单
 
 ## 安装方法
-可以下载CRX文件手动安装：[下载地址](https://github.com/zchengb/tops/releases)
+- 各浏览器安装地址：[Chrome（需翻墙）](https://chrome.google.com/webstore/detail/tops/ckmidipmomnedfjdfagajmdefdjgdikj)，[Chrome（无需翻墙）](https://www.gugeapps.net/webstore/detail/list/ckmidipmomnedfjdfagajmdefdjgdikj)，[Firefox](https://addons.mozilla.org/en-US/firefox/addon/tops/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
+
+- CRX文件手动安装：[下载地址](https://github.com/zchengb/tops/releases)
 
 ## 更新记录
 
