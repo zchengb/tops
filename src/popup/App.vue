@@ -185,9 +185,13 @@ export default {
         let elements = html.getElementsByClassName("Box-row")
         for (let i = 0; i <= this.api_config.base_num && i < elements.length; ++i) {
           let a_href = elements[i].querySelector("h1.lh-condensed > a");
+          log(a_href)
           let p_desc = elements[i].querySelector("p") || {textContent: undefined};
+          log(p_desc)
           let span_lang = elements[i].querySelector("div > span > span:last-child") || {textContent: undefined}
-          let span_stars = elements[i].querySelector("div.f6.text-gray.mt-2 > a")
+          log(span_lang)
+          let span_stars = elements[i].querySelector("div.f6.color-text-secondary.mt-2 > a")
+          log(span_stars)
           tops.push(new Top().setId(i + 1)
               .setTitle(a_href.textContent.replace(/[\r\s\n]+/g, ""))
               .setUrl(this.api_config.github_domain + a_href.getAttribute("href"))
@@ -195,8 +199,8 @@ export default {
               .setLang(span_lang.textContent)
               .setStars(span_stars.textContent.trim()))
         }
-        log(this.language)
       }
+      log("完成" + type + "资源获取：" + tops)
       return tops;
     },
     formatNums(nums) {

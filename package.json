@@ -5,7 +5,7 @@
   "scripts": {
     "prettier": "prettier \"src/**/*.{js,vue}\"",
     "prettier:write": "npm run prettier -- --write",
-    "build": "cross-env NODE_ENV=production webpack --hide-modules",
+    "build": "cross-env NODE_ENV=production webpack --hide-modules && node scripts/build-zip.js",
     "build:dev": "cross-env NODE_ENV=development webpack --hide-modules",
     "build-zip": "node scripts/build-zip.js",
     "watch": "npm run build -- --watch",
