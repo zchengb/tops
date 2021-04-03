@@ -25,6 +25,7 @@
   "permissions": [
     "*://*.sina.com.cn/*",
     "*://*.weibo.com/*",
+    "*://*.zhihu.com/*'",
     "*://github.com/*'"
   ]
 }
