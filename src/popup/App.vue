@@ -198,14 +198,15 @@ export default {
     getSinaTops(html) {
       let tops = [];
       let elements = html.getElementsByClassName('td-02');
-      for (let i = 1; i <= this.api_config.base_num; ++i) {
+      let id = 1;
+      for (let i = 1; i < elements.length; ++i) {
         let a = elements[i].querySelector('a');
         let span = elements[i].querySelector('span');
         let href = a.getAttribute('href');
-        if (i === 3 && href === 'javascript:void(0);') {
-          href = a.getAttribute('href_to');
+        if (href === 'javascript:void(0);') {
+          continue;
         }
-        tops.push(new Top().setId(i)
+        tops.push(new Top().setId(id++)
           .setTitle(a.textContent)
           .setUrl(this.api_config.sina_domain + href)
           .setNums(this.formatNums(span.textContent)));
